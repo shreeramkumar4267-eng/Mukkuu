@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b14">
+<meta name="description" content="Mukku Official - Instagram and YouTube Creator">
+<title>MUKKU OFFICIAL</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ background:#080b14;
+ color:#fff;
+ font-family:Arial,sans-serif;
+ overflow-x:hidden;
+}
+:root{
+ --blue:#438cff;
+ --cyan:#5ce1ee;
+ --card:#121c2d;
+ --muted:#aab6ca;
+}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1100px;margin:auto}
+
+/* NAVBAR */
+header{
+ position:sticky;top:0;z-index:100;
+ background:#080b14ed;
+ backdrop-filter:blur(15px);
+ border-bottom:1px solid #263650;
+}
+nav{
+ height:70px;display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+.logo{font-size:25px;font-weight:900;letter-spacing:3px}
+.logo span{color:var(--cyan)}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{color:var(--muted);font-size:14px}
+nav ul a:hover{color:var(--cyan)}
+
+/* HERO */
+.hero{padding:65px 0 40px;text-align:center}
+.hero-box{
+ padding:40px 20px;
+ border:1px solid #30496c;
+ border-radius:28px;
+ background:linear-gradient(145deg,#172b49,#0d1422);
+ box-shadow:0 20px 70px #0008;
+}
+.profile-images{
+ display:flex;justify-content:center;
+ gap:18px;margin-bottom:22px;
+}
+.profile-images img{
+ width:100px;height:100px;
+ border-radius:50%;object-fit:cover;
+ border:3px solid var(--blue);
+ padding:3px;background:#080b14;
+}
+.profile-images img:last-child{border-color:#ff455f}
+.small-title{
+ color:var(--cyan);letter-spacing:3px;
+ font-size:12px;font-weight:bold;
+}
+h1{font-size:clamp(45px,9vw,75px);letter-spacing:5px;margin:12px 0}
+.hero p{color:var(--muted);line-height:1.8;margin:15px auto 25px;max-width:550px}
+.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{
+ display:inline-block;padding:13px 23px;
+ border-radius:30px;background:var(--blue);
+ font-weight:bold;transition:.3s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.youtube{background:#202e43;border:1px solid #50617c}
+
+/* SECTIONS */
+section{padding:35px 0}
+.heading{font-size:28px;margin-bottom:8px}
+.subheading{color:var(--muted);margin-bottom:22px;font-size:14px}
+
+/* STATS */
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:15px;
+}
+.stat{
+ background:var(--card);padding:22px;
+ border:1px solid #283851;border-radius:18px;
+}
+.stat h2{font-size:28px;color:var(--cyan)}
+.stat p{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* SOCIAL */
+.social-grid{
+ display:grid;grid-template-columns:repeat(2,1fr);
+ gap:18px;
+}
+.social{
+ display:flex;align-items:center;gap:15px;
+ background:var(--card);padding:18px;
+ border:1px solid #293951;border-radius:20px;
+ transition:.3s;
+}
+.social:hover{border-color:var(--blue);transform:translateY(-3px)}
+.social img{
+ width:70px;height:70px;
+ border-radius:50%;object-fit:cover;
+}
+.social h3{margin-bottom:5px}
+.social p{font-size:13px;color:var(--muted)}
+.arrow{margin-left:auto;color:var(--cyan);font-size:22px}
+
+/* VIDEOS */
+.video-grid{
+ display:grid;grid-template-columns:repeat(2,1fr);
+ gap:18px;
+}
+.video{
+ background:var(--card);padding:12px;
+ border:1px solid #293951;border-radius:20px;
+}
+.video iframe{
+ width:100%;aspect-ratio:16/9;
+ border:0;border-radius:12px;
+}
+.video h3{font-size:16px;margin:12px 5px 5px}
+.video p{font-size:13px;color:var(--muted);margin:5px}
+
+/* INSTAGRAM POSTS */
+.posts{
+ display:grid;grid-template-columns:repeat(2,1fr);
+ gap:18px;
+}
+.post{
+ background:var(--card);padding:12px;
+ border-radius:18px;border:1px solid #293951;
+ overflow:hidden;
+}
+.post iframe{width:100%;border:0}
+.post a{display:block;text-align:center;color:var(--cyan);padding:12px}
+
+/* ABOUT */
+.about{
+ padding:25px;background:var(--card);
+ border:1px solid #293951;border-radius:20px;
+ color:var(--muted);line-height:1.9;
+}
+footer{
+ text-align:center;padding:35px 10px;
+ margin-top:35px;border-top:1px solid #293951;
+ color:var(--muted);font-size:13px;
+}
+footer span{color:var(--cyan)}
+
+/* MOBILE */
+@media(max-width:650px){
+ nav ul{gap:10px}
+ nav ul a{font-size:11px}
+ .logo{font-size:20px}
+ .hero{padding-top:35px}
+ .profile-images img{width:82px;height:82px}
+ .stats{gap:8px}
+ .stat{padding:13px}
+ .stat h2{font-size:21px}
+ .social-grid,.video-grid,.posts{grid-template-columns:1fr}
+ .heading{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container">
+  <nav>
+   <a href="#" class="logo">MUKKU<span>.</span></a>
+   <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#social">Social</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#about">About</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main class="container">
+
+<!-- HOME -->
+<section class="hero" id="home">
+ <div class="hero-box">
+
+  <div class="profile-images">
+   <!-- Replace these with your own image URLs -->
+   <img src="assets/instagram-dp.jpg" alt="Instagram DP">
+   <img src="assets/youtube-logo.jpg" alt="YouTube Logo">
+  </div>
+
+  <div class="small-title">OFFICIAL CREATOR WEBSITE</div>
+  <h1>MUKKU</h1>
+
+  <p>
+   Hey! Welcome to my official website.
+   I am a Digital Creator and Gamer.
+   ALWAYS HAPPY ❤️
+  </p>
+
+  <div class="buttons">
+   <a class="btn"
+   href="https://www.instagram.com/mukku__raj62/"
+   target="_blank">Instagram ↗</a>
+
+   <a class="btn youtube"
+   href="https://youtube.com/@yudhaffofficial"
+   target="_blank">YouTube ↗</a>
+  </div>
+
+ </div>
+</section>
+
+<!-- STATS -->
+<section>
+ <h2 class="heading">My Statistics</h2>
+ <p class="subheading">My creator journey</p>
+
+ <div class="stats">
+  <div class="stat">
+   <h2>1,812</h2>
+   <p>Instagram Followers</p>
+  </div>
+  <div class="stat">
+   <h2>1.05K</h2>
+   <p>YouTube Subscribers</p>
+  </div>
+  <div class="stat">
+   <h2>127</h2>
+   <p>YouTube Videos</p>
+  </div>
+ </div>
+</section>
+
+<!-- SOCIAL -->
+<section id="social">
+ <h2 class="heading">Find Me Online</h2>
+ <p class="subheading">Connect with me</p>
+
+ <div class="social-grid">
+
+  <a class="social"
+  href="https://www.instagram.com/mukku__raj62/"
+  target="_blank">
+
+   <img src="assets/instagram-dp.jpg" alt="Instagram">
+   <div>
+    <h3>Instagram</h3>
+    <p>@mukku__raj62</p>
+    <p>ALWAYS HAPPY ❤️</p>
+   </div>
+   <span class="arrow">↗</span>
+  </a>
+
+  <a class="social"
+  href="https://youtube.com/@yudhaffofficial"
+  target="_blank">
+
+   <img src="assets/youtube-logo.jpg" alt="YouTube">
+   <div>
+    <h3>Yudha ff</h3>
+    <p>@yudhaffofficial</p>
+    <p>YouTube Channel</p>
+   </div>
+   <span class="arrow">↗</span>
+  </a>
+
+ </div>
+</section>
+
+<!-- YOUTUBE VIDEOS -->
+<section id="videos">
+ <h2 class="heading">My YouTube Videos</h2>
+ <p class="subheading">Watch my latest content</p>
+
+ <div class="video-grid">
+
+  <div class="video">
+   <iframe
+   src="https://www.youtube-nocookie.com/embed/kWirbfcYnRc"
+   title="Yudha ff video 1"
+   allowfullscreen loading="lazy">
+   </iframe>
+   <h3>My Featured Video 01</h3>
+   <p>Yudha ff</p>
+  </div>
+
+  <div class="video">
+   <iframe
+   src="https://www.youtube-nocookie.com/embed/WDROFqXysIo"
+   title="Yudha ff video 2"
+   allowfullscreen loading="lazy">
+   </iframe>
+   <h3>My Featured Video 02</h3>
+   <p>Yudha ff</p>
+  </div>
+
+ </div>
+</section>
+
+<!-- INSTAGRAM POSTS -->
+<section>
+ <h2 class="heading">My Instagram Posts</h2>
+ <p class="subheading">Some moments from my profile</p>
+
+ <div class="posts">
+
+  <div class="post">
+   <blockquote class="instagram-media"
+   data-instgrm-permalink="https://www.instagram.com/p/DfgchYSmRFB/"
+   data-instgrm-version="14">
+   </blockquote>
+   <a href="https://www.instagram.com/p/DfgchYSmRFB/"
+   target="_blank">View Instagram Post ↗</a>
+  </div>
+
+  <div class="post">
+   <blockquote class="instagram-media"
+   data-instgrm-permalink="https://www.instagram.com/p/DfXQzggmc6k/"
+   data-instgrm-version="14">
+   </blockquote>
+   <a href="https://www.instagram.com/p/DfXQzggmc6k/"
+   target="_blank">View Instagram Post ↗</a>
+  </div>
+
+ </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+ <h2 class="heading">About Mukku</h2>
+
+ <div class="about">
+  Hello Everyone! I am Mukku ❤️
+
+  Welcome to my official creator website.
+  Here you can find my Instagram profile,
+  YouTube channel, photos and videos.
+
+  Thank you for visiting and supporting me.
+  Keep Supporting! ❤️
+ </div>
+</section>
+
+</main>
+
+<footer>
+ © 2026 <span>MUKKU OFFICIAL</span>
+ <br><br>
+ Made with ❤️
+</footer>
+
+<script async src="https://www.instagram.com/embed.js"></script>
+
+</body>
+</html>
